@@ -1,4 +1,3 @@
-'''
 #PROBLEMA I
 def brad():
     print("    *\n   ***\n  *****\n *******\n   ***\n")
@@ -16,7 +15,6 @@ def medarit2():
     m = (a+b)/2
     print("Media aritmetica este:", float(m))
 medarit2()
-
 
 #PROBLEMA IV
 def citire():
@@ -79,7 +77,6 @@ def afisare(m):
 a, b, c = citire()
 m = mij(a, b ,c)
 afisare(m)
-'''
 
 #PROBLEMA X
 def citire():
