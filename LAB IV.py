@@ -1,5 +1,5 @@
 #EXERCITIUL 1
-'''
+
 def inputs():
     x = int(input("X: "))
     if x<0:
@@ -45,6 +45,8 @@ def functii(x):
 
 x = inputs()
 functii(x)
+
+#ex2
 
 def inp():
     x, y = int(input("X: ")), int(input("Y: "))
@@ -218,6 +220,7 @@ def tinm():
 
 tinm()
 
+
 #EX 6
 def prs():
     x = int(input("X:"))
@@ -236,10 +239,10 @@ def prs():
             mx = n
         if(n < mn and c):
             mn = n
+        cop = n
         if n > 9:
             ucf = n % 10
             n = int(n/10)
-            s = s+ucf
             while n:
                 ucf1 = n % 10
                 if(ucf < ucf1):
@@ -247,23 +250,21 @@ def prs():
                     s = 0
                     break
                 else:
-                    s = s+ucf1
                     ucf = ucf1
                 n = int(n/10)
             if k:
-                s1 = s1+s
-                #print("s1",s1)
+                s1 = s1+cop
             else:
                 k = 1
         elif n < 10:
-            s1 = s1+n
-           #print("sf",s1)
+            s1 = s1+cop
     if (mn == 99999999 or mn == 0 or mx == 0):
         print("eroare")
     print("Cel mai mare nr prim:", mx,"Cel mai mic nr prim:", mn)
     print("Suma numarelor care au cifre in ordine crescatoare:",s1)
 
 prs()
+
 
 #EX7
 def ascji():
@@ -273,7 +274,7 @@ def ascji():
         d += 1
 
 ascji()
-'''
+
 #EX8
 def parmin():
     mn = 99999999
@@ -292,3 +293,42 @@ def parmin():
     print("Suma valorilor pare:",s,"Minimul este:",mn,"si apare de",c,"ori")
 
 parmin()
+
+
+def inp():
+    x, y = int(input("X: ")), int(input("Y: "))
+    return x,  y;
+
+def apr(x,y):
+    cop = y
+    c = 0
+    ycf = 0
+    if y > x:
+        aux = y
+        y = x
+        x = aux
+    cop1 = y
+    while cop1:
+        ycf += 1
+        cop1 /= 10
+    cop1 = y
+    while x:
+        ucx = x%10
+        while ycf:
+            ucy = y%10
+            if ucy == ucx:
+                c = 1
+                break
+            else:
+                c = 0
+            y = int(y/10)
+            ycf -= 1
+        y = cop
+        x = int(x/10)
+    if c:
+        print("Cele doua numere sunt formate din aceleasi cifre")
+    else:
+        print("Cele doua numere nu sunt formate din aceleasi cifre")
+
+x, y = inp()
+apr(x, y)
